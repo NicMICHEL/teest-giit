@@ -1,0 +1,15 @@
+services:
+
+  localhost:
+    image: alpine:latest
+    command: sleep infinity
+    ports:
+      - "8080:8080" # Keycloak port
+      - ${clientMSPort}:${clientMSPort}
+      - ${eurekaMSPort}:${eurekaMSPort}
+      - ${gatewayMSPort}:${gatewayMSPort}
+      - ${patientMSPort}:${patientMSPort}
+      - ${notesMSPort}:${notesMSPort}
+      - ${riskMSPort}:${riskMSPort}
+      - "3306:3306"
+      - "27017:27017"
